@@ -1,5 +1,6 @@
 var express = require('express'),
-	app		= express();
+	app		= express(),
+	PORT 	= process.env.PORT || 3000;
 
 
 var middleware = require('./middleware');
@@ -15,7 +16,7 @@ app.get('/about', middleware.reqAuth ,function(req, res){
 	res.send('About Me')
 })
 
-app.listen(3000, function(error){
+app.listen(PORT, function(error){
 	if(!error)
 		console.log("Up")
 });
